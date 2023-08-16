@@ -1,4 +1,5 @@
-how information about subdomains in servers
+#!/usr/bin/env bash
+# Show information about subdomains in servers
 print_domain () {
     result=$(dig "$1"."$2" | awk '/;; ANSWER SECTION:/{getline; print;}')
     echo -n "The subdomain $1 is a "
